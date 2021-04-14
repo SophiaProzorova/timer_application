@@ -1,9 +1,11 @@
-import DisplayTime from './components/DisplayTime'
+import { useState, useEffect } from 'react';
 import { interval, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import './App.css';
-import { useState, useEffect } from 'react';
+
+import DisplayTime from './components/DisplayTime'
 import DisplayBtn from './components/DisplayBtn';
+
+import './App.css';
 
 function App() {
   const [time, setTime] = useState(0);
@@ -49,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      <DisplayTime time ={time}/>
+      <DisplayTime time = {time}/>
       <DisplayBtn 
             start = {onStart}
             stop = {onStop}
